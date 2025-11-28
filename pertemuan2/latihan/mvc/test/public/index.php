@@ -10,4 +10,8 @@ $pdo = $database->connect();
 
 // Jalankan controller
 $controller = new UserController($pdo);
+<<<<<<< HEAD
 $controller->index();
+=======
+$controller->index();
+>>>>>>> e2825b7a9b5867c927d32e4a4af8231903d840c4

@@ -4,7 +4,11 @@
  * Mengatur tampilan daftar user dan detail user
  */
 class UserController {
+<<<<<<< HEAD
     private $userModel; 
+=======
+    private $userModel;
+>>>>>>> e2825b7a9b5867c927d32e4a4af8231903d840c4
 
     // Constructor - buat object User model
     public function __construct($pdo) {

@@ -1,6 +1,10 @@
 <?php
+<<<<<<< HEAD
 class Database
 {
+=======
+class Database {
+>>>>>>> e2825b7a9b5867c927d32e4a4af8231903d840c4
     // Konfigurasi database
     private $host = "localhost";
     private $dbname = "prakweb_pertemuan2";
@@ -11,8 +15,12 @@ class Database
     /**
      * Method untuk koneksi ke database
      */
+<<<<<<< HEAD
     public function connect()
     {
+=======
+    public function connect() {
+>>>>>>> e2825b7a9b5867c927d32e4a4af8231903d840c4
         // Cek apakah koneksi sudah dibuat
         if ($this->pdo === null) {
             try {

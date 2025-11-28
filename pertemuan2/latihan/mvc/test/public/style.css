@@ -1,5 +1,6 @@
 /* style.css - Taruh di folder public/ */
 * {
+<<<<<<< HEAD
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,18 +17,44 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+=======
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+>>>>>>> e2825b7a9b5867c927d32e4a4af8231903d840c4
 }
 
 /* Header */
 h1 {
+<<<<<<< HEAD
   color: #2c3e50;
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 2px solid #3498db;
+=======
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+>>>>>>> e2825b7a9b5867c927d32e4a4af8231903d840c4
 }
 
 /* Tables */
 .user-table {
+<<<<<<< HEAD
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -56,10 +83,40 @@ h1 {
 
 .user-table tr:hover {
   background-color: #e8f4fc;
+=======
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.user-table th, .user-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.user-table th {
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+}
+
+.user-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.user-table tr:hover {
+    background-color: #e8f4fc;
+>>>>>>> e2825b7a9b5867c927d32e4a4af8231903d840c4
 }
 
 /* Buttons */
 .btn {
+<<<<<<< HEAD
   display: inline-block;
   padding: 10px 20px;
   margin: 5px;
@@ -127,10 +184,80 @@ h1 {
   padding: 6px 12px;
   font-size: 12px;
   margin: 2px;
+=======
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+.btn-warning {
+    background-color: #f39c12;
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #e67e22;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+}
+
+.btn-small {
+    padding: 6px 12px;
+    font-size: 12px;
+    margin: 2px;
+>>>>>>> e2825b7a9b5867c927d32e4a4af8231903d840c4
 }
 
 /* Forms */
 .form-group {
+<<<<<<< HEAD
   margin-bottom: 20px;
 }
 
@@ -154,10 +281,36 @@ h1 {
   outline: none;
   border-color: #3498db;
   box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+=======
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+>>>>>>> e2825b7a9b5867c927d32e4a4af8231903d840c4
 }
 
 /* Alerts */
 .alert {
+<<<<<<< HEAD
   padding: 15px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -174,10 +327,29 @@ h1 {
   background-color: #f8d7da;
   color: #721c24;
   border-color: #f5c6cb;
+=======
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-left: 4px solid;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+>>>>>>> e2825b7a9b5867c927d32e4a4af8231903d840c4
 }
 
 /* User Detail */
 .user-detail {
+<<<<<<< HEAD
   background: white;
   padding: 25px;
   border-radius: 8px;
@@ -195,9 +367,34 @@ h1 {
   color: #2c3e50;
   min-width: 80px;
   display: inline-block;
+=======
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.user-detail p {
+    margin-bottom: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.user-detail strong {
+    color: #2c3e50;
+    min-width: 80px;
+    display: inline-block;
+>>>>>>> e2825b7a9b5867c927d32e4a4af8231903d840c4
 }
 
 /* Action Links */
 .action-links {
+<<<<<<< HEAD
   margin-top: 20px;
 }
+=======
+    margin-top: 20px;
+}
+
+>>>>>>> e2825b7a9b5867c927d32e4a4af8231903d840c4

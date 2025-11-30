@@ -2,31 +2,38 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title ?? 'Laravel App' }}</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  @vite('resources/css/app.css')
+  <title>{{ $title }}</title>
 </head>
 
-<body class="bg-gray-900 text-gray-100 min-h-screen">
-    <nav class="bg-gray-800 text-gray-100 p-4 shadow-lg">
-        <div class="container mx-auto flex gap-6">
-            <a href="/" class="hover:text-gray-300 font-semibold">Home</a>
-            <a href="/about" class="hover:text-gray-300 font-semibold">About</a>
-            <a href="/blog" class="hover:text-gray-300 font-semibold">Blog</a>
-            <a href="/contact" class="hover:text-gray-300 font-semibold">Contact</a>
+<body class="min-h-screen bg-gray-900 text-white flex flex-col">
+  <nav class="bg-gray-800 shadow-md">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex space-x-4">
+          <a href="/" class="px-3 py-2 text-white hover:text-blue-500 font-medium">Home</a>
+          <a href="/about" class="px-3 py-2 text-white hover:text-blue-500 font-medium">About</a>
+          <a href="/blog" class="px-3 py-2 text-white hover:text-blue-500 font-medium">Blog</a>
+          <a href="/contact" class="px-3 py-2 text-white hover:text-blue-500 font-medium">Contact</a>
+          <a href="/posts" class="px-3 py-2 text-white hover:text-blue-500 font-medium">Posts</a>
+          <a href="/categories" class="px-3 py-2 text-white hover:text-blue-500 font-medium">Categories</a>
         </div>
-    </nav>
-    
+      </div>
+    </div>
+  </nav>
 
-    <main class="container mx-auto px-4 py-8">
-        {{ $slot }}
-    </main>
+  <main class="container mx-auto px-4 py-8 grow">
+    {{ $slot }}
+  </main>
 
-    <div class="h-16"></div>
-    <footer class="fixed bottom-0 left-0 w-full bg-gray-800 text-gray-200 text-center p-4 border-t border-gray-700">
-        <p>&copy; 2025 Laravel Praktikum</p>
-    </footer>
+  <footer class="bg-gray-800 border-t border-gray-700 mt-12 static text-center">
+    <div class="container mx-auto px-4 py-6 text-sm text-gray-400">
+      <p>© 2025 Praktikum Web</p>
+    </div>
+  </footer>
 </body>
 
 </html>

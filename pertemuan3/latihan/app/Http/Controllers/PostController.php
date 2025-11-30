@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Post;
 
 class PostController extends Controller
 {
     public function index()
     {
-        return ('Ini adalah PostController!');
+        $posts = Post::all();
+        return view('posts', compact('posts'));
     }
 }

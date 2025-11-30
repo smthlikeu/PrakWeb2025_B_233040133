@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Category;
 
 class CategoryController extends Controller
 {
-    public function index()
-    {
-        return ('Ini adalah CategoryController!');
+    public function index() {
+        $categories = Category::all();
+        return view('categories', compact('categories'));
     }
 }

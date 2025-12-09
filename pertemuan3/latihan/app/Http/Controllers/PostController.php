@@ -10,7 +10,16 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        // Menggunakan with() untuk mengatasi N+1 Probelm
+        $posts = Post::with(['author', 'category'])->get();
         return view('posts', compact('posts'));
+    }
+
+    // Route Model Blinding untuk single post page
+    public function show(Post $post)
+    {
+        // Menggunakan with() untuk mengatasi N+1 Problem
+        $post->load(['author', 'category']);
+        return view('post', compact('post'));
     }
 }

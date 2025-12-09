@@ -45,7 +45,7 @@ class User extends Authenticatable
      * @return array<string, string>
      */
 
-    // Tipe data untuk kolom tertentu
+    //Tipe data untuk kolom tertentu
     protected function casts(): array
     {
         return [
@@ -53,6 +53,7 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    
 
     // Relasi one-to-many dengan model Post
     public function posts(): HasMany 

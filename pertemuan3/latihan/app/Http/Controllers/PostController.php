@@ -11,8 +11,8 @@ class PostController extends Controller
     public function index()
     {
         // Menggunakan with() untuk mengatasi N+1 Probelm
-        $posts = Post::with(['author', 'category'])->get();
-        return view('posts', compact('posts'));
+        $posts = Post::with(['author', 'category'])->paginate(5)->withQueryString();
+        return view('pages.posts', compact('posts'));
     }
 
     // Route Model Blinding untuk single post page
@@ -20,6 +20,6 @@ class PostController extends Controller
     {
         // Menggunakan with() untuk mengatasi N+1 Problem
         $post->load(['author', 'category']);
-        return view('post', compact('post'));
+        return view('pages.post', compact('post'));
     }
 }

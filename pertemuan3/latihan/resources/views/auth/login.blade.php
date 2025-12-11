@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
     <x-slot:title>
         Login
     </x-slot:title>
@@ -21,4 +21,4 @@
             </div>
         </form>
     </div>
-</x-layout>
+</x-app-layout>

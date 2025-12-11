@@ -1,4 +1,4 @@
-<x-layout>
+<x-app-layout>
     <x-slot:title>Categories</x-slot:title>
 
     <div class="max-w-6xl mx-auto">
@@ -62,4 +62,4 @@
             @endforelse
         </div>
     </div>
-</x-layout>
+</x-app-layout>

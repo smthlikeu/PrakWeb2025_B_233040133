@@ -12,7 +12,7 @@ class RegisterController extends Controller
     // Modul 2-2 START - Authentikasi Manual Sederhana
     public function showRegistrationForm()
     {
-        return view('register');
+        return view('auth/register');
     }
 
     public function register(Request $request)

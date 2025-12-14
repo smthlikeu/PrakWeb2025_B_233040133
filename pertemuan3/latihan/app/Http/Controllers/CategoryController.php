@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::withCount('posts')->get();
+        $categories = Category::withCount('posts')->orderBy('name')->get();
         return view('pages.categories', compact('categories'));
     }
 
@@ -22,7 +22,7 @@ class CategoryController extends Controller
      */
     public function adminIndex()
     {
-        $categories = Category::paginate(10);
+        $categories = Category::withCount('posts')->paginate(10);
         return view('categories-admin.index', compact('categories'));
     }
 
@@ -63,6 +63,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
+        $category->loadCount('posts');
         $posts = $category->posts()->paginate(10);
         return view('categories-admin.show', compact('category', 'posts'));
     }

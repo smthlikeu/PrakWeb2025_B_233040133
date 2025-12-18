@@ -18,7 +18,7 @@
                     <a href="/" class="px-3 py-2 text-white hover:text-blue-200 font-medium">Home</a>
                     <a href="/about" class="px-3 py-2 text-white hover:text-blue-200 font-medium">About</a>
                     <a href="/blog" class="px-3 py-2 text-white hover:text-blue-200 font-medium">Blog</a>
-                    <a href="/posts" class="px-3 py-2 text-white hover:text-blue-200 font-medium">Posts</a>
+                    <!-- <a href="/posts" class="px-3 py-2 text-white hover:text-blue-200 font-medium">Posts</a> -->
                     <a href="/categories" class="px-3 py-2 text-white hover:text-blue-200 font-medium">Categories</a>
                     <a href="/contact" class="px-3 py-2 text-white hover:text-blue-200 font-medium">Contact</a>
                 </div>

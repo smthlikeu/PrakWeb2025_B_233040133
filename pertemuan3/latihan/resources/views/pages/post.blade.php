@@ -28,7 +28,7 @@
         <!-- Back Button -->
         <div class="flex gap-3">
             <a href="{{ route('posts.index') }}" class="px-6 py-2 bg-gray-200 text-black rounded-lg hover:bg-gray-300">
-                ← Back to Posts
+                ← Back to Blog
             </a>
         </div>
     </div>

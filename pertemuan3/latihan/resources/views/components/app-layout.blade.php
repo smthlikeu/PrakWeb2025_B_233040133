@@ -21,7 +21,6 @@
                 <a href="/" class="hover:text-blue-100 transition-colors text-sm">Home</a>
                 <a href="/about" class="hover:text-blue-100 transition-colors text-sm">About</a>
                 <a href="/blog" class="hover:text-blue-100 transition-colors text-sm">Blog</a>
-                <a href="/posts" class="hover:text-blue-100 transition-colors text-sm">Posts</a>
                 <a href="/categories" class="hover:text-blue-100 transition-colors text-sm">Categories</a>
                 <a href="/contact" class="hover:text-blue-100 transition-colors text-sm">Contact</a>
             </div>

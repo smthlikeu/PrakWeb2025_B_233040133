@@ -16,10 +16,6 @@ Route::get('/about', function () {
     return view('pages.about');
 });
 
-Route::get('/blog', function () {
-    return view('pages.blog');
-});
-
 Route::get('/contact', function () {
     return view('pages.contact');
 });
@@ -27,10 +23,11 @@ Route::get('/contact', function () {
 
 // Route untuk memanggil method di CategoryController dan PostController
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
-Route::get('/posts', [PostController::class, 'index'])->middleware('auth')->name('posts.index');
+// Halaman blog (sebelumnya /posts)
+Route::get('/blog', [PostController::class, 'index'])->middleware('auth')->name('posts.index');
 
-// Route Model Binding dengan slug
-Route::get('/posts/{post:slug}', [PostController::class, 'show'])->middleware('auth')->name('posts.show');
+// Route Model Binding dengan slug untuk single blog post
+Route::get('/blog/{post:slug}', [PostController::class, 'show'])->middleware('auth')->name('posts.show');
 
 // Route untuk register - middleware guest (hanya untuk yang belum login)
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->middleware('guest')->name('register');

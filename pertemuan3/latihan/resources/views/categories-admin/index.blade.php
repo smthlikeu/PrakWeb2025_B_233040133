@@ -27,7 +27,7 @@
                         <td class="px-6 py-4 text-gray-900">{{ ($categories->currentPage() - 1) * $categories->perPage() + $loop->iteration }}</td>
                         <td class="px-6 py-4 text-gray-900">{{ $category->name }}</td>
                         <td class="px-6 py-4">
-                            <div class="w-8 h-8 rounded border" style="background-color: {{ $category->color }};">
+                            <div class="w-8 h-8 rounded border" style="background-color: {{ $category->color ?? '#000000' }};">
                             </div>
                         </td>
                         <td class="px-6 py-4 text-gray-900">{{ $category->posts_count }}</td>

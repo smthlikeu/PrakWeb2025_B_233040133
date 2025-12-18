@@ -1,52 +1,92 @@
 <x-app-layout>
-    <x-slot:title>All Posts</x-slot:title>
+    <x-slot:title>Blog</x-slot:title>
 
-    <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl font-bold text-black mb-8">All Posts</h1>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <p class="text-sm font-semibold uppercase tracking-widest text-blue-600 mb-1">Blog</p>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900">Artikel Terbaru</h1>
+                <p class="mt-2 text-sm text-gray-500">Kumpulan artikel pilihan seputar teknologi, pemrograman, dan web
+                    development.</p>
+            </div>
+        </div>
 
         @if ($posts->count() > 0)
-            <div class="space-y-6 mb-8">
-                @foreach ($posts as $post)
-                    <div class="bg-white shadow-sm rounded-lg p-6 hover:shadow-md transition-shadow">
-                        <div class="flex justify-between items-start mb-3">
-                            <div>
-                                <h2 class="text-2xl font-bold text-black mb-2">
-                                    <a href="{{ route('posts.show', $post->slug) }}" class="hover:text-blue-600">
-                                        {{ $post->title }}
-                                    </a>
-                                </h2>
-                                <p class="text-gray-600 text-sm">
-                                    By {{ $post->author->name }} • {{ $post->created_at->format('M d, Y') }}
-                                </p>
+        <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+            @foreach ($posts as $post)
+            <article
+                class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col">
+                {{-- Image --}}
+                <div class="relative h-44 md:h-48 w-full overflow-hidden">
+                    @if ($post->image)
+                    <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}"
+                        class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                    @else
+                    <div
+                        class="w-full h-full bg-gradient-to-tr from-blue-500 via-indigo-500 to-purple-500 flex items-center justify-center text-white text-xl font-semibold">
+                        {{ Str::limit($post->title, 24) }}
+                    </div>
+                    @endif
+                </div>
+
+                {{-- Content --}}
+                <div class="flex-1 flex flex-col p-6 space-y-3">
+                    @if ($post->category)
+                    <span class="inline-flex items-center text-xs font-semibold text-white px-3 py-1 rounded-full w-max"
+                        style="background-color: {{ $post->category->color }}">
+                        {{ $post->category->name }}
+                    </span>
+                    @endif
+
+                    <h2 class="text-xl font-bold text-gray-900 leading-snug">
+                        <a href="{{ route('posts.show', $post->slug) }}"
+                            class="hover:text-blue-600 transition-colors">
+                            {{ $post->title }}
+                        </a>
+                    </h2>
+
+                    <p class="text-sm text-gray-600 line-clamp-3">
+                        {{ $post->excerpt ?? Str::limit(strip_tags($post->body), 160) }}
+                    </p>
+
+                    {{-- Author & Meta --}}
+                    <div class="flex items-center justify-between pt-4 mt-auto border-t border-gray-100">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="h-9 w-9 rounded-full bg-gray-900 text-white flex items-center justify-center text-xs font-semibold">
+                                {{ Str::upper(Str::substr($post->author->name, 0, 2)) }}
                             </div>
-                            @if ($post->category)
-                                <span class="px-3 py-1 text-white rounded-full text-xs font-semibold"
-                                    style="background-color: {{ $post->category->color }}">
-                                    {{ $post->category->name }}
-                                </span>
-                            @endif
+                            <div class="text-xs text-gray-500 leading-tight">
+                                <p class="font-semibold text-gray-800">{{ $post->author->name }}</p>
+                                <p>{{ $post->created_at->diffForHumans() }}</p>
+                            </div>
                         </div>
 
-                        <p class="text-gray-700 line-clamp-3 mb-4">
-                            {{ Str::limit($post->body, 200) }}
-                        </p>
-
                         <a href="{{ route('posts.show', $post->slug) }}"
-                            class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-                            Read More
+                            class="inline-flex items-center text-xs font-semibold text-blue-600 hover:text-blue-700">
+                            Baca selengkapnya
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
                         </a>
                     </div>
-                @endforeach
-            </div>
+                </div>
+            </article>
+            @endforeach
+        </div>
 
-            <!-- Pagination -->
-            <div class="mt-8">
-                {{ $posts->links() }}
-            </div>
+        {{-- Pagination --}}
+        <div class="mt-10">
+            {{ $posts->links() }}
+        </div>
         @else
-            <div class="bg-white rounded-lg p-12 text-center border border-gray-300">
-                <p class="text-gray-600 text-lg">No posts found.</p>
-            </div>
+        <div
+            class="mt-12 bg-white rounded-2xl border border-dashed border-gray-300 px-10 py-16 text-center text-gray-500">
+            <h3 class="text-lg font-semibold mb-2">Belum ada artikel</h3>
+            <p class="text-sm">Silakan tambahkan post baru melalui dashboard untuk mulai mengisi blog.</p>
+        </div>
         @endif
     </div>
 </x-app-layout>

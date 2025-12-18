@@ -4,7 +4,7 @@
     <div class="max-w-2xl mx-auto bg-white shadow-sm rounded-lg p-6">
         <h1 class="text-3xl font-bold text-black mb-6">Create New Post</h1>
 
-        <form action="{{ route('dashboard.store') }}" method="POST" class="space-y-6">
+        <form action="{{ route('dashboard.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
             @csrf
 
             {{-- Title --}}
@@ -43,6 +43,16 @@
                 <textarea id="body" name="body" rows="8" required
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">{{ old('body') }}</textarea>
                 @error('body')
+                    <span class="text-red-600 text-sm">{{ $message }}</span>
+                @enderror
+            </div>
+
+            {{-- Image (optional) --}}
+            <div>
+                <label for="image" class="block text-sm font-medium text-black mb-2">Image</label>
+                <input type="file" id="image" name="image"
+                    class="block w-full text-sm text-gray-800 border border-gray-300 rounded-lg cursor-pointer bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
+                @error('image')
                     <span class="text-red-600 text-sm">{{ $message }}</span>
                 @enderror
             </div>

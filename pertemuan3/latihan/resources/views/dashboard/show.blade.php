@@ -20,8 +20,15 @@
             </div>
         </div>
 
-        {{-- Post Content --}}
+        {{-- Post Image & Content --}}
         <div class="bg-white shadow-sm rounded-lg p-6 mb-6">
+            @if ($post->image)
+                <div class="mb-4">
+                    <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}"
+                        class="w-full max-h-96 object-cover rounded-lg border border-gray-200">
+                </div>
+            @endif
+
             <div class="prose prose-sm max-w-none text-gray-800 whitespace-pre-wrap">
                 {{ $post->body }}
             </div>
